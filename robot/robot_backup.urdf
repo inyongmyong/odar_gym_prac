@@ -1,0 +1,282 @@
+<robot name="onshape">
+<link name="carboncore_trimmed">
+<visual>
+<origin xyz="0 0 0" rpy="0 0 0" />
+<geometry>
+<mesh filename="package:///carboncore_trimmed.stl"/>
+</geometry>
+<material name="carboncore_trimmed_material">
+<color rgba="0.50196078431372548323 0.48627450980392156188 0.43921568627450979783 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0 0" rpy="0 0 0" />
+<geometry>
+<mesh filename="package:///carboncore_trimmed.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="0.06220377838800934811 -0.00081166579575752014191 0.0081301940672984501085" rpy="0 0 0"/>
+<mass value="0.68033960653214187175" />
+<inertia ixx="0.0034049063809335209166" ixy="0.00011851577626720599158"  ixz="-0.0014669875457031845718" iyy="0.044368362478861743392" iyz="1.5040307544309021405e-05" izz="0.043966602753011306548" />
+</inertial>
+</link>
+
+<link name="prop1_ccw">
+<visual>
+<origin xyz="0 0 0.025937580000000015623" rpy="0 0 0" />
+<geometry>
+<mesh filename="package:///prop1_ccw.stl"/>
+</geometry>
+<material name="prop1_ccw_material">
+<color rgba="0.59607843137254901134 0.17647058823529412908 0.050980392156862744391 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0 0.025937580000000015623" rpy="0 0 0" />
+<geometry>
+<mesh filename="package:///prop1_ccw.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="0 0 0" rpy="0 0 0"/>
+<mass value="0" />
+<inertia ixx="0" ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+</inertial>
+</link>
+
+<joint name="rotor1" type="revolute">
+<origin xyz="0.1901346163825429203 -0.10667889383230952371 0.10690773959400795556" rpy="-0.76172013743401167929 0.50384486504700898291 -0.49146705106369859006" />
+<parent link="carboncore_trimmed" />
+<child link="prop1_ccw" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="prop2_cw">
+<visual>
+<origin xyz="0 0 0.025937580000000001745" rpy="3.141592653589793116 0 0" />
+<geometry>
+<mesh filename="package:///prop2_cw.stl"/>
+</geometry>
+<material name="prop2_cw_material">
+<color rgba="0.32549019607843138191 0.52941176470588235947 0.75294117647058822484 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0 0.025937580000000001745" rpy="3.141592653589793116 0 0" />
+<geometry>
+<mesh filename="package:///prop2_cw.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="0 0 0" rpy="0 0 0"/>
+<mass value="0" />
+<inertia ixx="0" ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+</inertial>
+</link>
+
+<joint name="rotor2" type="revolute">
+<origin xyz="0.18986538361745650128 0.10667889383230873268 0.10690773959400820536" rpy="0.43106599087810859583 0.79884651171808707115 -1.9602557982348738363" />
+<parent link="carboncore_trimmed" />
+<child link="prop2_cw" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="prop3_cw">
+<visual>
+<origin xyz="0 0 0.02593757999999997399" rpy="-3.141592653589793116 0 0" />
+<geometry>
+<mesh filename="package:///prop3_cw.stl"/>
+</geometry>
+<material name="prop3_cw_material">
+<color rgba="0.32549019607843138191 0.52941176470588235947 0.75294117647058822484 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0 0.02593757999999997399" rpy="-3.141592653589793116 0 0" />
+<geometry>
+<mesh filename="package:///prop3_cw.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="0 0 0" rpy="0 0 0"/>
+<mass value="0" />
+<inertia ixx="0" ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+</inertial>
+</link>
+
+<joint name="rotor3" type="revolute">
+<origin xyz="0.18986538361745708414 -0.1066788938323083441 -0.10690773959400755311" rpy="2.2928785981507244784 -0.28801524573923636963 -2.4266630327565632541" />
+<parent link="carboncore_trimmed" />
+<child link="prop3_cw" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="prop4_ccw">
+<visual>
+<origin xyz="0 0 0.025937579999999960112" rpy="0 0 0" />
+<geometry>
+<mesh filename="package:///prop4_ccw.stl"/>
+</geometry>
+<material name="prop4_ccw_material">
+<color rgba="0.59607843137254901134 0.17647058823529412908 0.050980392156862744391 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0 0.025937579999999960112" rpy="0 0 0" />
+<geometry>
+<mesh filename="package:///prop4_ccw.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="0 0 0" rpy="0 0 0"/>
+<mass value="0" />
+<inertia ixx="0" ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+</inertial>
+</link>
+
+<joint name="rotor4" type="revolute">
+<origin xyz="0.19013461638254011699 0.10667889383230902411 -0.10690773959400616533" rpy="-3.0468882700019426224 0.88074536208921405667 2.6534237677933192323" />
+<parent link="carboncore_trimmed" />
+<child link="prop4_ccw" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="prop5_cw">
+<visual>
+<origin xyz="0 0 0.025937579999999987868" rpy="0 0 0" />
+<geometry>
+<mesh filename="package:///prop5_cw.stl"/>
+</geometry>
+<material name="prop5_cw_material">
+<color rgba="0.32549019607843138191 0.52941176470588235947 0.75294117647058822484 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0 0.025937579999999987868" rpy="0 0 0" />
+<geometry>
+<mesh filename="package:///prop5_cw.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="0 0 0" rpy="0 0 0"/>
+<mass value="0" />
+<inertia ixx="0" ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+</inertial>
+</link>
+
+<joint name="rotor5" type="revolute">
+<origin xyz="-0.19013461638254169905 0.10667889383231010658 -0.10690773959400948212" rpy="-2.8197196344319137573 -0.83923680562395919225 -2.9521720882640174466" />
+<parent link="carboncore_trimmed" />
+<child link="prop5_cw" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="prop6_ccw">
+<visual>
+<origin xyz="0 0 0.025937580000000008684" rpy="0 0 0" />
+<geometry>
+<mesh filename="package:///prop6_ccw.stl"/>
+</geometry>
+<material name="prop6_ccw_material">
+<color rgba="0.59607843137254901134 0.17647058823529412908 0.050980392156862744391 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0 0.025937580000000008684" rpy="0 0 0" />
+<geometry>
+<mesh filename="package:///prop6_ccw.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="0 0 0" rpy="0 0 0"/>
+<mass value="0" />
+<inertia ixx="0" ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+</inertial>
+</link>
+
+<joint name="rotor6" type="revolute">
+<origin xyz="-0.18986538361745533554 -0.10667889383230873268 -0.10690773959400609594" rpy="2.2949296787757305083 0.29574976569221184119 2.4337908078615528851" />
+<parent link="carboncore_trimmed" />
+<child link="prop6_ccw" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="prop7_ccw">
+<visual>
+<origin xyz="0 0 0.025937580000000015623" rpy="0 0 0" />
+<geometry>
+<mesh filename="package:///prop7_ccw.stl"/>
+</geometry>
+<material name="prop7_ccw_material">
+<color rgba="0.59607843137254901134 0.17647058823529412908 0.050980392156862744391 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0 0.025937580000000015623" rpy="0 0 0" />
+<geometry>
+<mesh filename="package:///prop7_ccw.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="0 0 0" rpy="0 0 0"/>
+<mass value="0" />
+<inertia ixx="0" ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+</inertial>
+</link>
+
+<joint name="rotor7" type="revolute">
+<origin xyz="-0.18986538361745688985 0.10667889383230881595 0.10690773959400642901" rpy="0.42137538424756221245 -0.80311158301320095809 1.9737516233729166526" />
+<parent link="carboncore_trimmed" />
+<child link="prop7_ccw" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="prop8_cw">
+<visual>
+<origin xyz="0 0 0.025937579999999987868" rpy="3.141592653589793116 0 0" />
+<geometry>
+<mesh filename="package:///prop8_cw.stl"/>
+</geometry>
+<material name="prop8_cw_material">
+<color rgba="0.32549019607843138191 0.52941176470588235947 0.75294117647058822484 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0 0.025937579999999987868" rpy="3.141592653589793116 0 0" />
+<geometry>
+<mesh filename="package:///prop8_cw.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="0 0 0" rpy="0 0 0"/>
+<mass value="0" />
+<inertia ixx="0" ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+</inertial>
+</link>
+
+<joint name="rotor8" type="revolute">
+<origin xyz="-0.19013461638254247621 -0.10667889383231098088 0.10690773959400853843" rpy="0.88294930045505159999 -0.060232920967615677377 -2.1320910367088550252" />
+<parent link="carboncore_trimmed" />
+<child link="prop8_cw" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+
+</robot>
